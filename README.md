@@ -18,6 +18,20 @@ The FSIR framework consists of two core modules.
 * **Sequence Alignment Module:** Rapidly aligns variable-length ITS sequences and estimates similarity based on mismatches and gaps. This approach effectively circumvents the substantial memory consumption typically associated with traditional k-mer feature extraction methods.
 * **HNSW Construction & Indexing Module:** Employs a top-down insertion strategy based on probability to ensure optimal graph sparsity and density. During retrieval, it leverages this structure for efficient local optimization, significantly reducing unnecessary search steps.
 
-![FSIR Model Architecture](images/architecture.png)
+<p align="center">
+  <img width="750" height="350" alt="image" src="https://github.com/user-attachments/assets/66344691-6a82-4fca-ad27-46d6f0959653" />
+</p>
 
-The FSIR framework consists of two core modules...
+
+<p align="center">
+  <img width="39%" alt="image" src="https://github.com/user-attachments/assets/e7753650-5389-40c8-a0ca-d212170856ae" />
+  <img width="36.5%" alt="image" src="https://github.com/user-attachments/assets/8db283f5-0ec8-46dc-a2cc-1763eb308769" />
+</p>
+
+## 📊 Model Experiments
+
+To evaluate the overall performance of FSIR in fungal ITS sequence retrieval and classification tasks, we conducted a comparative experiment against the widely adopted BLAST algorithm. As shown in Table 1, FSIR outperforms BLAST in both retrieval efficiency and classification accuracy. The performance gains are particularly significant at fine-grained taxonomic ranks, such as family, genus, and species.
+
+In terms of performance metrics, FSIR demonstrates a distinct advantage. Its Average Response Time (ART) is 0.592 seconds, a 68.02% reduction compared to BLAST’s 1.4728 seconds. Its memory footprint is 229.2 MB, also representing a 16.71% decrease. Regarding classification accuracy, FSIR achieved improvements at all taxonomic levels. Notably, at the fine-grained “species” level, the accuracy increased from 94.33% to 95.35%, a gain of 1.08%.
+
+Overall, compared to the traditional BLAST algorithm, FSIR achieves faster query responses, higher classification accuracy, and lower memory consumption, making it particularly suitable for large-scale fungal ITS sequence retrieval and classification tasks
